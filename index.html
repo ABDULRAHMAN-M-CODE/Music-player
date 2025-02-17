@@ -1,6 +1,87 @@
 
+<!-- xmlns="http://www.w3.org/2000/svg" ,this namespace tells the browser that the SVG
+ element follows the SVG standards -->
+
+
+<!--This file is commented to rienforce the knowledge I got from freecodecamp.org,
+it was for learning purposes,there are alot of comments for my self , that was one of my first project
+  during the learning process , what a happy days!!!!-->
+
+
+                                       <!--look, the whole square you see contains
+                                        two lines , then lets think , why to not
+                                        put those two lines in a div element? 
+                                        and look down , you see  a bunch of controls
+                                        so why not to put those inside  another div?
+                                        so that the 'player-content' contains two divs
+                                        first div contains two P's and the second Div 
+                                        contains the controls which are  five controls-->
+                                        <!--don't be confused , this is not the
+                                        'content' here mean the picture wf
+                                         Quincy larson and the Controls-->
+
+
+ <!--those are the controls-->   
+                                        <!--easy rule:
+                                        use div when you need to group more than one 
+                                        element, but when you have single element
+                                        that is stand alone , don't use div
+                                        because that element has a semantic meaning -->
+
+                                 <!--first 
+                                 div of 
+                                 player-->
+                                       <!--display="swap" here simply means use fullback
+                                        font until the custom font is fully loaded , then
+                                        swap to the custome font,insuring
+                                        better user's experience-->
+
+
+<!--<svg> has closing tag, it contains path element,which is better than 
+CSS hacks like border:transparent , for making something like tringle if you want 
+to draw a 
+  something like tringle or <rect> if you want make square-like  graphics
+    <svg>
+      <path/>
+      <rect/>
+    </svg>
+-->
+<!--A new concept learned here is the SVG , which is the scalable vector graphics
+  insted of making shapes USING CSS HACKS , like the border : transparent
+    to make some triangle ,  we use the SVG  to create shapes using coordinates 
+    and then we can scale them without  loosing quality!,
+ so SVG mean to create resizable shapes or images using vectors, i.e ,using lines
+   and shapes created using mathmatical formula using XML  not ,pixels-->
+
+<!--SVG is canvas:frame-->
 <!--This file is commented to rienforce the knowledge I got from freecodecamp.org,
 it was for learning purposes -->
+
+<!--the webpage consists of two parts,
+player and playlist-->
+<!--the player division consists of :
+    -->
+
+
+            
+
+
+
+<!--d="M23.2248 0L7.03964 9.5L23.2248 19L23.2248 0Z"-->
+ <!-- this line above is used to draw  the "previous-music" button ,after making the SVG
+canvas , move to the right and put pencil or drawer at position
+23.2248 0 , from that point , start drawing inclined(diagonal) Line to the left until reaching 
+7.03964 9.5,this 9.5 it means go downward althought its a positive 
+value,then from that point draw another diagonal  line until you reach 23.224 
+ 
+which is  similar to the first point but down by 19+9.5 units ,then go upward 
+to the starting point , you Got a  triangle now ! , Z is for closing the path-->
+<!--aria-label, accessability rich internet application-label ,is like narrator, which helps screen readers
+    by give text descreption for elements, thats helps visual-impaired people,it helps 
+them access the functionality of some element by hearning sound by screen readers-->
+<!--H19  mean draw horizental line to the right 19 units
+   V draws verticle line -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,9 +136,10 @@ it was for learning purposes -->
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 ><path d="M23.2248 0L7.03964 9.5L23.2248 19L23.2248 0Z" /><rect
-                    width="4.63633"
+                    width="4.63633" 
                     height="18.5453"
-                    transform="matrix(-1 0 0 1 4.63633 0)"/></svg>
+                    transform="matrix(-1 0 0 1 4.63633 0)"/>
+                </svg>
               </button>
               <button id="play" class="play" aria-label="Play">
                 <svg
@@ -66,7 +148,7 @@ it was for learning purposes -->
                   viewBox="0 0 17 19"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                > <path d="M0 0L16.1852 9.5L1.88952e-07 19L0 0Z" /></svg>
+                > <path d="M0 0L16.1852 9.5L0 19L0 0Z" /></svg>
               </button>
               <button id="pause" class="pause" aria-label="Pause">
                 <svg
@@ -75,7 +157,7 @@ it was for learning purposes -->
                   viewBox="0 0 17 19"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                ><path d="M0 6.54013e-07H4.75V19H0V6.54013e-07Z" /> <path d="M11.4 0H16.15V19H11.4V0Z" /></svg>
+                ><path d="M0 0H4.75V19H0V0Z" /> <path d="M11.4 0H16.15V19H11.4V0Z" /></svg>
               </button>
               <button id="next" class="next" aria-label="Next">
                 <svg
@@ -103,7 +185,7 @@ it was for learning purposes -->
           </div>
         </div>
       </div>
-      <div class="playlist">
+      <div class="playlist"><!--this what contains the Songs!!!-->
         <div class="playlist-bar">
           <div class="parallel-lines">
             <div></div>
@@ -115,7 +197,8 @@ it was for learning purposes -->
             <div></div>
           </div>
         </div>
-        <ul id="playlist-songs"></ul>
+        <ul id="playlist-songs"></ul> <!--this list is not empty ,
+                                       it will be filled with song using Javascript file-->
       </div>
     </div>
     <script src="script.js"></script>
